@@ -37,6 +37,14 @@ The version number is written only in `VERSION` (embedded with `go:embed`; it is
 - `segments_test.go` (a fake IntroDB server, made-up IDs): query parameters and response conversion (intro, recap, outro, `post_credits` unused, confidence scale, seconds-to-milliseconds conversion, implausible ranges), caching (including 404), movies, targets that cannot be queried send no request, 429/5xx and errors not being cached, request spacing and one at a time, submit conditions (off by default, no key) and body fields (only those listed), rejected/429/400/401.
 - `plugin_test.go`: `TestDescribe` (three languages, capabilities, feature code, attribution only in the source line, concurrency 1), `TestConfigure`, `TestPluginProcess` (compiles the executable and starts it with the host's environment variables, checking the handshake, health check, `Describe`, `Configure`, `GetSegments`, the metadata service not being registered, and graceful exit on SIGTERM).
 
+## Official builds and releases
+
+This repository is the source code of the official Kryspal Media `introdb` plugin. Official versions are built by this repository's GitHub Actions workflow from a `v*` tag, attached to a GitHub Release, and then added to the Kryspal Media plugin catalog, which Kryspal signs. The Kryspal Media server installs and updates official plugins from that signed catalog and verifies the signature.
+
+A binary you build from this source yourself is **not** signed by Kryspal and is not part of the official catalog. You are free to build, modify and run it under the Apache License 2.0, but the server treats it as a third-party plugin.
+
+Release process (maintainers): update `VERSION` and `CHANGELOG.md` for any change that alters the binary, wait for the CI workflow to pass on `main`, then push an annotated tag `vX.Y.Z` that matches `VERSION`. The release workflow builds linux/amd64 and linux/arm64 packages, creates the GitHub Release and notifies the main repository, which verifies the packages and publishes the catalog. A published version is never changed.
+
 ## License
 
 Apache License 2.0, see `LICENSE` and `NOTICE`.
