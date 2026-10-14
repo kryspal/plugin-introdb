@@ -1,0 +1,14 @@
+{
+  "name": "IntroDB",
+  "nameI18n": {
+    "zh-TW": "IntroDB",
+    "zh-CN": "IntroDB"
+  },
+  "description": "Looks up intro, recap and outro times from the IntroDB community database. Lookups need no key; uploading your own manual markings is off by default.",
+  "descriptionI18n": {
+    "zh-TW": "從 IntroDB 社群資料庫查詢片頭、前情提要與片尾的時間。查詢不需要金鑰；上傳你自己手動標記的時間預設關閉。",
+    "zh-CN": "从 IntroDB 社群数据库查询片头、前情提要与片尾的时间。查询不需要密钥；上传你自己手动标记的时间默认关闭。"
+  },
+  "owner": "Kryspal Media",
+  "capabilities": ["segments.provider", "segments.submit"]
+}
