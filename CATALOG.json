@@ -10,6 +10,7 @@
     "zh-CN": "从 IntroDB 社群数据库查询片头、前情提要与片尾的时间。查询不需要密钥；上传你自己手动标记的时间默认关闭。"
   },
   "owner": "Kryspal Media",
+  "minServer": "0.9.2-beta",
   "homepage": "https://github.com/kryspal/plugin-introdb",
   "capabilities": ["segments.provider", "segments.submit"]
 }
